@@ -86,21 +86,7 @@ Module Usuarios
 
             cmd.ExecuteNonQuery()
 
-            valor = msg.Value
-
-            If accion = 1 And valor <> "10" Then
-                MessageBox.Show("Se a creado nuevo registro", "Agregar")
-            ElseIf valor = "10" Then
-                MessageBox.Show("Usuario ya existe")
-            End If
-
-            If accion = 2 Then
-                MessageBox.Show("Se a actualizo el registro", "Actualizar")
-            End If
-            If accion = 3 Then
-
-            End If
-
+            'si la accion es consultar traemos los datos si existen
             If accion = 4 Then
                 Dim data_reader As SqlDataReader
                 data_reader = cmd.ExecuteReader
@@ -121,9 +107,38 @@ Module Usuarios
                     i = 2
                 End If
             End If
+            '*******************************************************************
 
-            If accion = 5 Then
+            valor = msg.Value 'este es el valor retornado de la consulta
+
+            '10 = inserta
+            '20 = actualiza
+            '30 = elimina
+            '40 = selecciona
+            '50 = actualiza clave
+            '60 = error o existe usuario
+
+            'validaciones de valor retornado
+            If accion = 1 And valor = "10" Then
+
+                MessageBox.Show("Se a creado nuevo registro", "Agregar")
+
+            ElseIf accion = 2 And valor = "20" Then
+
+                MessageBox.Show("Se a actualizo el registro", "Actualizar")
+
+            ElseIf accion = 3 And valor = "30" Then
+
+                MessageBox.Show("Se a eliminado el registro", "Eliminar")
+
+            ElseIf accion = 5 And valor = "50" Then
+
                 MessageBox.Show("Se actualizo la clave de usuario", "Clave")
+
+            ElseIf valor = "60" Then
+
+                MessageBox.Show("Usuario ya existe")
+
             End If
 
         Catch ex As SqlException

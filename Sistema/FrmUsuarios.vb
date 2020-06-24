@@ -29,7 +29,7 @@
     'Activa la consulta de usuario
     Private Sub BtnConsultar_Click(sender As Object, e As EventArgs) Handles BtnConsultar.Click
         accion = 4
-
+        Dim correoID As String = TbCorreo.Text
         ConectarSQL()
         AgregarUsuario(TbCorreo.Text, TbNombre, TbApellido, TxUbicacion, CbPlanta, CbEmpresa, anexo, CbTipo, CbEstados, accion, TbClave, i)
         TbAnexo.Text = anexo
@@ -43,9 +43,11 @@
             CbTipo.Enabled = False
             BtnUsuarios.Text = "Actualizar"
         Else
-            Limpiar(Me)
-            BtnUsuarios.Text = "Agregar"
-            CbEstados.Text = "Activo"
+            Limpiar(Me) 'limpiamos los campos
+            TbCorreo.Text = correoID 'mantenemos el correo consultado
+            BtnUsuarios.Text = "Agregar" 'cambiamos el nombre del boton
+            CbEstados.Text = "Activo" 'cambiamos el estado a usuario activo
+            'activamos los campos
             TbNombre.Enabled = True
             TbApellido.Enabled = True
             CbEmpresa.Enabled = True
@@ -60,27 +62,32 @@
         If TbCorreo.Text <> "" And TbNombre.Text <> "" And TbApellido.Text <> "" And TxUbicacion.Text <> "" And CbEmpresa.Text <> "" And CbPlanta.Text <> "" And CbTipo.Text <> "" Then
 
             Try
-                If BtnUsuarios.Text = "Agregar" Then
-                    accion = 1
+                'validamos que anexo
+                If TbAnexo.Text = "" Then
+                    anexo = 0
                 Else
-                    accion = 2 'es actualizar usuario en SP SQL
-                    If TbAnexo.Text = "" Then
-                        anexo = 0
-                    Else
-                        anexo = Convert.ToInt32(TbAnexo.Text)
-                    End If
+                    anexo = Convert.ToInt32(TbAnexo.Text)
                 End If
+
+                'validamos las acciones 
+                If BtnUsuarios.Text = "Agregar" Then
+
+                    accion = 1 'agregar usuario
+
+                ElseIf TbClave.Enabled = True And TbClave.Text <> "" And BtnUsuarios.Text = "Actualizar" Then
+
+                    accion = 5 'actualizar clave de usuario, solo aplica para admin o tech
+
+                ElseIf BtnUsuarios.Text = "Actualizar" Then
+
+                    accion = 2 'actualizar usuario
+
+                End If
+
                 ConectarSQL()
                 AgregarUsuario(TbCorreo.Text, TbNombre, TbApellido, TxUbicacion, CbPlanta, CbEmpresa, anexo, CbTipo, CbEstados, accion, TbClave, i)
                 DesconectarSQL()
-                'esta condicion es solo si el usuario es tecnico o administrador
-                If TbClave.Enabled = True And TbClave.Text <> "" Then
-                    accion = 5
-                    ConectarSQL()
-                    AgregarUsuario(TbCorreo.Text, TbNombre, TbApellido, TxUbicacion, CbPlanta, CbEmpresa, anexo, CbTipo, CbEstados, accion, TbClave, i)
-                    DesconectarSQL()
 
-                End If
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
