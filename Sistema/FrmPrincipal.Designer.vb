@@ -208,7 +208,7 @@ Partial Class FrmPrincipal
         Me.TxbContraseñaUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxbContraseñaUsuario.Size = New System.Drawing.Size(100, 22)
         Me.TxbContraseñaUsuario.TabIndex = 20
-        Me.TxbContraseñaUsuario.Text = "Andes.2020"
+        Me.TxbContraseñaUsuario.Text = "Andes.20"
         '
         'Label1
         '

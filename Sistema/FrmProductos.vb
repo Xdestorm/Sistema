@@ -57,7 +57,7 @@
 
 
         If TxServiceTag.Text <> "" And CbMarcas.Text <> "" And CbModelos.Text <> "" And CbTiposProd.Text <> "" And CbSitiosProd.Text <> "" And CbEstadosProd.Text <> "" And CbContratos.Text <> "" Then
-            Dim opt As Integer
+            ' Dim opt As Integer
             Try
                 If BtnProductos.Text = "Agregar" Then
                     accion = 1
