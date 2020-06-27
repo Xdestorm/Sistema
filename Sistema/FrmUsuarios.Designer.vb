@@ -39,8 +39,6 @@ Partial Class FrmUsuarios
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.CbTipo = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TbClave = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.CbEstados = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -245,31 +243,6 @@ Partial Class FrmUsuarios
         Me.CbTipo.Size = New System.Drawing.Size(150, 29)
         Me.CbTipo.TabIndex = 8
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label11.Location = New System.Drawing.Point(249, 280)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(55, 21)
-        Me.Label11.TabIndex = 20
-        Me.Label11.Text = "Clave: "
-        '
-        'TbClave
-        '
-        Me.TbClave.BackColor = System.Drawing.Color.LightGray
-        Me.TbClave.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TbClave.Enabled = False
-        Me.TbClave.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TbClave.Location = New System.Drawing.Point(310, 280)
-        Me.TbClave.MaxLength = 8
-        Me.TbClave.Name = "TbClave"
-        Me.TbClave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TbClave.Size = New System.Drawing.Size(100, 22)
-        Me.TbClave.TabIndex = 9
-        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -403,8 +376,6 @@ Partial Class FrmUsuarios
         Me.Controls.Add(Me.CbEstados)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.BtnUsuarios)
-        Me.Controls.Add(Me.TbClave)
-        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.CbTipo)
         Me.Controls.Add(Me.TbAnexo)
@@ -454,8 +425,6 @@ Partial Class FrmUsuarios
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents CbTipo As ComboBox
-    Friend WithEvents Label11 As Label
-    Friend WithEvents TbClave As TextBox
     Friend WithEvents BtnUsuarios As Button
     Friend WithEvents Label12 As Label
     Friend WithEvents CbEstados As ComboBox

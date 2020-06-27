@@ -3,6 +3,13 @@
 Public Class FrmPrincipal
     Dim acceso As Integer
     Dim tipo As Integer
+    Dim accion As Integer
+    Dim msg As String
+
+    Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+    End Sub
+
 
 #Disable Warning IDE1006 ' Estilos de nombres
     Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
@@ -30,18 +37,35 @@ Public Class FrmPrincipal
         formularios.AbrirFormEnPanel(Of FrmInventario)()
     End Sub
     Private Sub BtnAcceso_Click(sender As Object, e As EventArgs) Handles BtnAcceso.Click
-        ConectarSQL()
 
-        spLogin(TxbInicioUsuario, TxbContraseñaUsuario, acceso, tipo) ' procedimiento que trae los datos, si es valido activa los controles
+        accion = 4
+        tipo = 0
+        Dim psw As String = TxbContraseñaUsuario.Text
+
+        ConectarSQL()
+        spLogin(TxbInicioUsuario, psw, acceso, tipo, accion, msg) ' procedimiento que trae los datos, si es valido activa los controles
+
         If acceso = 1 Then
             btnUsuarios.Enabled = True
             BtnProductos.Enabled = True
             BtnAsignaciones.Enabled = True
             BtnInventario.Enabled = True
+            TmMenuMostrar.Enabled = True
+        Else
+
+            MessageBox.Show("no tiene privilegios para acceder al sistema", "Sistema", MessageBoxButtons.OK)
+            TxbInicioUsuario.Text = ""
+            TxbContraseñaUsuario.Text = ""
+            TxbInicioUsuario.Select()
         End If
         'dato que indica si es tecnico o administrador y activa las condiciones de administrador
         If tipo = 1 Then
             BtnAdministracion.Enabled = True
+            btn_adm.Enabled = True
+        ElseIf tipo = 2 Then
+            BtnAdministracion.Enabled = True
+        Else
+
         End If
         DesconectarSQL()
     End Sub
@@ -70,5 +94,46 @@ Public Class FrmPrincipal
             Me.PMVertical.Width = PMVertical.Width + 10
         End If
     End Sub
+
+    Private Sub btn_adm_Click(sender As Object, e As EventArgs) Handles btn_adm.Click
+        formularios.CerrarFormEnPanel(Of FrmLogin)()
+
+        formularios.AbrirFormEnPanel(Of FrmLogin)()
+    End Sub
+
+    Private Sub btn_cerrar_Click(sender As Object, e As EventArgs) Handles btn_cerrar.Click
+
+        If MessageBox.Show(
+            "¿Desea cerrar sesion?", "Cerrar sesion",
+            MessageBoxButtons.YesNo) = DialogResult.Yes Then
+            DesconectarSQL()
+
+            formularios.CerrarFormEnPanel(Of FrmUsuarios)()
+            formularios.CerrarFormEnPanel(Of FrmProductos)()
+            formularios.CerrarFormEnPanel(Of FrmAsignaciones)()
+            formularios.CerrarFormEnPanel(Of FrmInventario)()
+            formularios.CerrarFormEnPanel(Of FrmLogin)()
+
+            Limpiar(Me)
+            TxbInicioUsuario.Text = ""
+            TxbContraseñaUsuario.Text = ""
+            btn_adm.Enabled = False
+            btnUsuarios.Enabled = False
+            BtnInventario.Enabled = False
+            BtnAsignaciones.Enabled = False
+            BtnProductos.Enabled = False
+            BtnAdministracion.Enabled = False
+
+            Me.Refresh()
+        Else
+
+
+
+        End If
+
+
+
+    End Sub
+
 
 End Class

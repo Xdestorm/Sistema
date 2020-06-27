@@ -61,9 +61,9 @@ Module Usuarios
     End Sub
 
     'Agregar usuario nuevo, actualizar, eliminar o consultar
-    Public Sub AgregarUsuario(ByVal correo As String, ByRef nom As TextBox, ByRef apell As TextBox, ByRef ubicacion As TextBox, ByRef planta As ComboBox, ByRef empresa As ComboBox, ByRef anexo As Integer, ByRef tipo As ComboBox, ByRef estado As ComboBox, ByVal accion As Integer, ByVal clave As TextBox, ByRef i As Integer)
+    Public Sub Usuario(ByVal correo As String, ByRef nom As TextBox, ByRef apell As TextBox, ByRef ubicacion As TextBox, ByRef planta As ComboBox, ByRef empresa As ComboBox, ByRef anexo As Integer, ByRef tipo As ComboBox, ByRef estado As ComboBox, ByVal accion As Integer, ByRef i As Integer)
 
-        'procedimiento que crea al usuario, lo actualiza, elimina 
+        'procedimiento que crea al usuario, actualizar, eliminar o consultar 
         Try
             cmd = New SqlCommand("spMultiUsuario", cnn) With {
                 .CommandType = CommandType.StoredProcedure
@@ -79,7 +79,6 @@ Module Usuarios
             cmd.Parameters.Add("@tipo", SqlDbType.VarChar).Value = tipo.Text.Trim()
             cmd.Parameters.Add("@estado", SqlDbType.VarChar).Value = estado.Text.Trim()
             cmd.Parameters.Add("@accion", SqlDbType.Int).Value = accion
-            cmd.Parameters.Add("@cla", SqlDbType.VarChar).Value = clave.Text.Trim()
             'se usa para retornar un valor
             msg = cmd.Parameters.Add("@msg", SqlDbType.VarChar, 100)
             msg.Direction = ParameterDirection.Output
@@ -111,31 +110,26 @@ Module Usuarios
 
             valor = msg.Value 'este es el valor retornado de la consulta
 
-            '10 = inserta
-            '20 = actualiza
-            '30 = elimina
-            '40 = selecciona
-            '50 = actualiza clave
-            '60 = error o existe usuario
+            '1 = inserta
+            '2 = actualiza
+            '3 = elimina
+            '4 = selecciona
+            '6 = error o existe usuario
 
             'validaciones de valor retornado
-            If accion = 1 And valor = "10" Then
+            If accion = 1 And valor = "1" Then
 
                 MessageBox.Show("Se a creado nuevo registro", "Agregar")
 
-            ElseIf accion = 2 And valor = "20" Then
+            ElseIf accion = 2 And valor = "2" Then
 
                 MessageBox.Show("Se a actualizo el registro", "Actualizar")
 
-            ElseIf accion = 3 And valor = "30" Then
+            ElseIf accion = 3 And valor = "3" Then
 
                 MessageBox.Show("Se a eliminado el registro", "Eliminar")
 
-            ElseIf accion = 5 And valor = "50" Then
-
-                MessageBox.Show("Se actualizo la clave de usuario", "Clave")
-
-            ElseIf valor = "60" Then
+            ElseIf valor = "4" Then
 
                 MessageBox.Show("Usuario ya existe")
 

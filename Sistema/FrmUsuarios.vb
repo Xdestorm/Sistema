@@ -31,7 +31,7 @@
         accion = 4
         Dim correoID As String = TbCorreo.Text
         ConectarSQL()
-        AgregarUsuario(TbCorreo.Text, TbNombre, TbApellido, TxUbicacion, CbPlanta, CbEmpresa, anexo, CbTipo, CbEstados, accion, TbClave, i)
+        Usuario(TbCorreo.Text, TbNombre, TbApellido, TxUbicacion, CbPlanta, CbEmpresa, anexo, CbTipo, CbEstados, accion, i)
         TbAnexo.Text = anexo
         DesconectarSQL()
 
@@ -74,10 +74,6 @@
 
                     accion = 1 'agregar usuario
 
-                ElseIf TbClave.Enabled = True And TbClave.Text <> "" And BtnUsuarios.Text = "Actualizar" Then
-
-                    accion = 5 'actualizar clave de usuario, solo aplica para admin o tech
-
                 ElseIf BtnUsuarios.Text = "Actualizar" Then
 
                     accion = 2 'actualizar usuario
@@ -85,7 +81,7 @@
                 End If
 
                 ConectarSQL()
-                AgregarUsuario(TbCorreo.Text, TbNombre, TbApellido, TxUbicacion, CbPlanta, CbEmpresa, anexo, CbTipo, CbEstados, accion, TbClave, i)
+                Usuario(TbCorreo.Text, TbNombre, TbApellido, TxUbicacion, CbPlanta, CbEmpresa, anexo, CbTipo, CbEstados, accion, i)
                 DesconectarSQL()
 
             Catch ex As Exception
@@ -102,21 +98,11 @@
 
 
         Else
-            MessageBox.Show("llene todos los campos requeridos", "Información")
+            MessageBox.Show("Complete todos los campos requeridos", "Información")
         End If
     End Sub
 
     Private Sub BtnAdminUsers_Click(sender As Object, e As EventArgs) Handles BtnAdminUsers.Click
 
-    End Sub
-
-    Private Sub CbTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbTipo.SelectedIndexChanged
-        If CbTipo.Text = "Técnico" Or CbTipo.Text = "Administrador" Then
-
-            TbClave.Enabled = True
-        Else
-            TbClave.Enabled = False
-
-        End If
     End Sub
 End Class

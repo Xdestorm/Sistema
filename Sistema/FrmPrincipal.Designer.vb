@@ -32,6 +32,7 @@ Partial Class FrmPrincipal
         Me.btnUsuarios = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PTop = New System.Windows.Forms.Panel()
+        Me.btn_adm = New System.Windows.Forms.Button()
         Me.BtnAcceso = New System.Windows.Forms.Button()
         Me.TxbContraseñaUsuario = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -42,6 +43,7 @@ Partial Class FrmPrincipal
         Me.PContainer = New System.Windows.Forms.Panel()
         Me.TmMenuOcultar = New System.Windows.Forms.Timer(Me.components)
         Me.TmMenuMostrar = New System.Windows.Forms.Timer(Me.components)
+        Me.btn_cerrar = New System.Windows.Forms.Button()
         Me.PMVertical.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PTop.SuspendLayout()
@@ -168,6 +170,8 @@ Partial Class FrmPrincipal
         'PTop
         '
         Me.PTop.BackColor = System.Drawing.Color.White
+        Me.PTop.Controls.Add(Me.btn_cerrar)
+        Me.PTop.Controls.Add(Me.btn_adm)
         Me.PTop.Controls.Add(Me.BtnAcceso)
         Me.PTop.Controls.Add(Me.TxbContraseñaUsuario)
         Me.PTop.Controls.Add(Me.Label1)
@@ -181,6 +185,23 @@ Partial Class FrmPrincipal
         Me.PTop.Size = New System.Drawing.Size(1224, 50)
         Me.PTop.TabIndex = 1
         '
+        'btn_adm
+        '
+        Me.btn_adm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_adm.BackColor = System.Drawing.Color.Transparent
+        Me.btn_adm.BackgroundImage = Global.Sistema.My.Resources.Resources.psettings
+        Me.btn_adm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_adm.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_adm.Enabled = False
+        Me.btn_adm.FlatAppearance.BorderSize = 0
+        Me.btn_adm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_adm.ForeColor = System.Drawing.Color.Transparent
+        Me.btn_adm.Location = New System.Drawing.Point(1016, 7)
+        Me.btn_adm.Name = "btn_adm"
+        Me.btn_adm.Size = New System.Drawing.Size(35, 35)
+        Me.btn_adm.TabIndex = 23
+        Me.btn_adm.UseVisualStyleBackColor = False
+        '
         'BtnAcceso
         '
         Me.BtnAcceso.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -191,9 +212,9 @@ Partial Class FrmPrincipal
         Me.BtnAcceso.FlatAppearance.BorderSize = 0
         Me.BtnAcceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAcceso.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnAcceso.Location = New System.Drawing.Point(1061, 11)
+        Me.BtnAcceso.Location = New System.Drawing.Point(975, 7)
         Me.BtnAcceso.Name = "BtnAcceso"
-        Me.BtnAcceso.Size = New System.Drawing.Size(22, 22)
+        Me.BtnAcceso.Size = New System.Drawing.Size(35, 35)
         Me.BtnAcceso.TabIndex = 22
         Me.BtnAcceso.UseVisualStyleBackColor = False
         '
@@ -203,12 +224,11 @@ Partial Class FrmPrincipal
         Me.TxbContraseñaUsuario.BackColor = System.Drawing.Color.LightGray
         Me.TxbContraseñaUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxbContraseñaUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxbContraseñaUsuario.Location = New System.Drawing.Point(955, 12)
+        Me.TxbContraseñaUsuario.Location = New System.Drawing.Point(869, 12)
         Me.TxbContraseñaUsuario.Name = "TxbContraseñaUsuario"
         Me.TxbContraseñaUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxbContraseñaUsuario.Size = New System.Drawing.Size(100, 22)
         Me.TxbContraseñaUsuario.TabIndex = 20
-        Me.TxbContraseñaUsuario.Text = "Andes.20"
         '
         'Label1
         '
@@ -217,7 +237,7 @@ Partial Class FrmPrincipal
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label1.Location = New System.Drawing.Point(853, 12)
+        Me.Label1.Location = New System.Drawing.Point(767, 12)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(96, 21)
         Me.Label1.TabIndex = 21
@@ -229,11 +249,10 @@ Partial Class FrmPrincipal
         Me.TxbInicioUsuario.BackColor = System.Drawing.Color.LightGray
         Me.TxbInicioUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxbInicioUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxbInicioUsuario.Location = New System.Drawing.Point(652, 11)
+        Me.TxbInicioUsuario.Location = New System.Drawing.Point(623, 12)
         Me.TxbInicioUsuario.Name = "TxbInicioUsuario"
-        Me.TxbInicioUsuario.Size = New System.Drawing.Size(195, 22)
+        Me.TxbInicioUsuario.Size = New System.Drawing.Size(138, 22)
         Me.TxbInicioUsuario.TabIndex = 18
-        Me.TxbInicioUsuario.Text = "vector.iibacache.c@aes.com"
         '
         'Label9
         '
@@ -242,7 +261,7 @@ Partial Class FrmPrincipal
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label9.Location = New System.Drawing.Point(575, 11)
+        Me.Label9.Location = New System.Drawing.Point(546, 12)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(71, 21)
         Me.Label9.TabIndex = 19
@@ -302,6 +321,22 @@ Partial Class FrmPrincipal
         '
         Me.TmMenuMostrar.Interval = 50
         '
+        'btn_cerrar
+        '
+        Me.btn_cerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_cerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btn_cerrar.BackgroundImage = Global.Sistema.My.Resources.Resources.arrow1_40529
+        Me.btn_cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_cerrar.FlatAppearance.BorderSize = 0
+        Me.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_cerrar.ForeColor = System.Drawing.Color.Transparent
+        Me.btn_cerrar.Location = New System.Drawing.Point(1057, 7)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(35, 35)
+        Me.btn_cerrar.TabIndex = 24
+        Me.btn_cerrar.UseVisualStyleBackColor = False
+        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -341,4 +376,6 @@ Partial Class FrmPrincipal
     Friend WithEvents BtnAcceso As Button
     Friend WithEvents TmMenuOcultar As Timer
     Friend WithEvents TmMenuMostrar As Timer
+    Friend WithEvents btn_adm As Button
+    Friend WithEvents btn_cerrar As Button
 End Class
