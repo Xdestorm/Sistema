@@ -16,7 +16,7 @@ Module conexion
 
         'cnn = New SqlConnection("Server=" & Server & ";Database=" & DB & ";Integrated Security=true")
 
-        cnn = New SqlConnection("Server=tcp:vmsql-01.database.windows.net,1433;Initial Catalog=InvSoporte;Persist Security Info=False;User ID=test;Password=150718Az;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
+        cnn = New SqlConnection("Server=tcp:vmsql-01.database.windows.net,1433;Initial Catalog=InvSoporte;Persist Security Info=False;User ID=test;Password=SOLICITAR PARA PRUEBAS;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
 
         Try
 
