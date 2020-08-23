@@ -35,6 +35,7 @@ Partial Class FrmLogin
         Me.Label1 = New System.Windows.Forms.Label()
         Me.OK = New MetroSet_UI.Controls.MetroSetButton()
         Me.Cancel = New MetroSet_UI.Controls.MetroSetButton()
+        Me.Eliminar = New MetroSet_UI.Controls.MetroSetButton()
         Me.SuspendLayout()
         '
         'UsernameLabel
@@ -171,12 +172,39 @@ Partial Class FrmLogin
         Me.Cancel.ThemeAuthor = "Narwin"
         Me.Cancel.ThemeName = "MetroLite"
         '
+        'Eliminar
+        '
+        Me.Eliminar.DisabledBackColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.Eliminar.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.Eliminar.DisabledForeColor = System.Drawing.Color.Gray
+        Me.Eliminar.Enabled = False
+        Me.Eliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Eliminar.HoverBorderColor = System.Drawing.Color.FromArgb(CType(CType(95, Byte), Integer), CType(CType(207, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Eliminar.HoverColor = System.Drawing.Color.FromArgb(CType(CType(95, Byte), Integer), CType(CType(207, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Eliminar.HoverTextColor = System.Drawing.Color.White
+        Me.Eliminar.Location = New System.Drawing.Point(492, 200)
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.NormalBorderColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.Eliminar.NormalColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.Eliminar.NormalTextColor = System.Drawing.Color.White
+        Me.Eliminar.PressBorderColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(147, Byte), Integer), CType(CType(195, Byte), Integer))
+        Me.Eliminar.PressColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(147, Byte), Integer), CType(CType(195, Byte), Integer))
+        Me.Eliminar.PressTextColor = System.Drawing.Color.White
+        Me.Eliminar.Size = New System.Drawing.Size(94, 23)
+        Me.Eliminar.Style = MetroSet_UI.Design.Style.Light
+        Me.Eliminar.StyleManager = Nothing
+        Me.Eliminar.TabIndex = 10
+        Me.Eliminar.Text = "Eliminar"
+        Me.Eliminar.ThemeAuthor = "Narwin"
+        Me.Eliminar.ThemeName = "MetroLite"
+        '
         'FrmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1001, 461)
+        Me.Controls.Add(Me.Eliminar)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)
         Me.Controls.Add(Me.Label1)
@@ -201,4 +229,5 @@ Partial Class FrmLogin
     Friend WithEvents Label1 As Label
     Friend WithEvents OK As MetroSet_UI.Controls.MetroSetButton
     Friend WithEvents Cancel As MetroSet_UI.Controls.MetroSetButton
+    Friend WithEvents Eliminar As MetroSet_UI.Controls.MetroSetButton
 End Class

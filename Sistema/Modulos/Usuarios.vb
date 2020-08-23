@@ -131,7 +131,7 @@ Module Usuarios
 
             ElseIf valor = "4" Then
 
-                MessageBox.Show("Usuario ya existe")
+                'MessageBox.Show("Usuario ya existe")
 
             End If
 

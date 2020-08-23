@@ -32,6 +32,7 @@ Partial Class FrmPrincipal
         Me.btnUsuarios = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PTop = New System.Windows.Forms.Panel()
+        Me.btn_cerrar = New System.Windows.Forms.Button()
         Me.btn_adm = New System.Windows.Forms.Button()
         Me.BtnAcceso = New System.Windows.Forms.Button()
         Me.TxbContraseñaUsuario = New System.Windows.Forms.TextBox()
@@ -43,7 +44,6 @@ Partial Class FrmPrincipal
         Me.PContainer = New System.Windows.Forms.Panel()
         Me.TmMenuOcultar = New System.Windows.Forms.Timer(Me.components)
         Me.TmMenuMostrar = New System.Windows.Forms.Timer(Me.components)
-        Me.btn_cerrar = New System.Windows.Forms.Button()
         Me.PMVertical.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PTop.SuspendLayout()
@@ -185,6 +185,22 @@ Partial Class FrmPrincipal
         Me.PTop.Size = New System.Drawing.Size(1224, 50)
         Me.PTop.TabIndex = 1
         '
+        'btn_cerrar
+        '
+        Me.btn_cerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_cerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btn_cerrar.BackgroundImage = Global.Sistema.My.Resources.Resources.arrow1_40529
+        Me.btn_cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_cerrar.FlatAppearance.BorderSize = 0
+        Me.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_cerrar.ForeColor = System.Drawing.Color.Transparent
+        Me.btn_cerrar.Location = New System.Drawing.Point(1057, 7)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(35, 35)
+        Me.btn_cerrar.TabIndex = 24
+        Me.btn_cerrar.UseVisualStyleBackColor = False
+        '
         'btn_adm
         '
         Me.btn_adm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -320,22 +336,6 @@ Partial Class FrmPrincipal
         'TmMenuMostrar
         '
         Me.TmMenuMostrar.Interval = 50
-        '
-        'btn_cerrar
-        '
-        Me.btn_cerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_cerrar.BackColor = System.Drawing.Color.Transparent
-        Me.btn_cerrar.BackgroundImage = Global.Sistema.My.Resources.Resources.arrow1_40529
-        Me.btn_cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_cerrar.FlatAppearance.BorderSize = 0
-        Me.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_cerrar.ForeColor = System.Drawing.Color.Transparent
-        Me.btn_cerrar.Location = New System.Drawing.Point(1057, 7)
-        Me.btn_cerrar.Name = "btn_cerrar"
-        Me.btn_cerrar.Size = New System.Drawing.Size(35, 35)
-        Me.btn_cerrar.TabIndex = 24
-        Me.btn_cerrar.UseVisualStyleBackColor = False
         '
         'FrmPrincipal
         '

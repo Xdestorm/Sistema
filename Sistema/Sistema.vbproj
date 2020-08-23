@@ -83,7 +83,7 @@
       <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\Documents\Librerias\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\packages\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="MetroSet UI, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroSet_UI.1.0.5\lib\net45\MetroSet UI.dll</HintPath>
@@ -107,6 +107,9 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
+    <Import Include="Bunifu.Framework" />
+    <Import Include="Bunifu.Framework.Lib" />
+    <Import Include="Bunifu.Framework.UI" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
     <Import Include="System.Collections" />

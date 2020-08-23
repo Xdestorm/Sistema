@@ -14,9 +14,9 @@ Module conexion
 
     Public Sub ConectarSQL(Optional ByVal Server As String = "XDESTORM-NV", Optional ByVal DB As String = "InvSoporte")
 
-        'cnn = New SqlConnection("Server=" & Server & ";Database=" & DB & ";Integrated Security=true")
+        cnn = New SqlConnection("Server=" & Server & ";Database=" & DB & ";Integrated Security=true")
 
-        cnn = New SqlConnection("Server=tcp:vmsql-01.database.windows.net,1433;Initial Catalog=InvSoporte;Persist Security Info=False;User ID=test;Password=150718Az;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
+        ' cnn = New SqlConnection("Server=tcp:vmsql-01.database.windows.net,1433;Initial Catalog=InvSoporte;Persist Security Info=False;User ID=test;Password=150718Az;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
 
         Try
 
