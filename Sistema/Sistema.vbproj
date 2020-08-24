@@ -169,6 +169,7 @@
     <Compile Include="Modulos\informes.vb" />
     <Compile Include="Modulos\Productos.vb" />
     <Compile Include="Modulos\Usuarios.vb" />
+    <Compile Include="Modulos\validaciones.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

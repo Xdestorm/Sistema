@@ -42,32 +42,47 @@ Public Class FrmPrincipal
         tipo = 0
         Dim psw As String = TxbContraseñaUsuario.Text
 
-        ConectarSQL()
-        spLogin(TxbInicioUsuario, psw, acceso, tipo, accion, msg) ' procedimiento que trae los datos, si es valido activa los controles
+        Dim validar_email As New validaciones 'instanciamos el objeto
 
-        If acceso = 1 Then
-            btnUsuarios.Enabled = True
-            BtnProductos.Enabled = True
-            BtnAsignaciones.Enabled = True
-            BtnInventario.Enabled = True
-            TmMenuMostrar.Enabled = True
+        If validar_email.valemail(LCase(TxbInicioUsuario.Text)) = False Then
+            MessageBox.Show("Dirección de correo electronico no valida, el correo debe tener el formato: nombre@dominio.com, " & " por favor seleccione un correo valido", "Validación de correo electronico", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            TxbInicioUsuario.Focus()
+            TxbInicioUsuario.SelectAll()
+
+
         Else
 
-            MessageBox.Show("no tiene privilegios para acceder al sistema", "Sistema", MessageBoxButtons.OK)
-            TxbInicioUsuario.Text = ""
-            TxbContraseñaUsuario.Text = ""
-            TxbInicioUsuario.Select()
-        End If
-        'dato que indica si es tecnico o administrador y activa las condiciones de administrador
-        If tipo = 1 Then
-            BtnAdministracion.Enabled = True
-            btn_adm.Enabled = True
-        ElseIf tipo = 2 Then
-            BtnAdministracion.Enabled = True
-        Else
+            ConectarSQL()
+            spLogin(TxbInicioUsuario, psw, acceso, tipo, accion, msg) ' procedimiento que trae los datos, si es valido activa los controles
+
+            If acceso = 1 Then
+                btnUsuarios.Enabled = True
+                BtnProductos.Enabled = True
+                BtnAsignaciones.Enabled = True
+                BtnInventario.Enabled = True
+                TmMenuMostrar.Enabled = True
+            Else
+
+                MessageBox.Show("no tiene privilegios para acceder al sistema", "Sistema", MessageBoxButtons.OK)
+                TxbInicioUsuario.Text = ""
+                TxbContraseñaUsuario.Text = ""
+                TxbInicioUsuario.Select()
+            End If
+            'dato que indica si es tecnico o administrador y activa las condiciones de administrador
+            If tipo = 1 Then
+                BtnAdministracion.Enabled = True
+                btn_adm.Enabled = True
+            ElseIf tipo = 2 Then
+                BtnAdministracion.Enabled = False
+            Else
+
+            End If
+            DesconectarSQL()
 
         End If
-        DesconectarSQL()
+
+
+
     End Sub
     'Acciones del Muenu Vertical
     Private Sub PBMenu_Click(sender As Object, e As EventArgs) Handles PBMenu.Click
@@ -134,6 +149,4 @@ Public Class FrmPrincipal
 
 
     End Sub
-
-
 End Class
