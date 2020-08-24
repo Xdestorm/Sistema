@@ -30,7 +30,7 @@ Module informes
     End Sub
 
 #Disable Warning IDE1006 ' Estilos de nombres
-    Public Sub inventarioDisponibles(ByVal sitio As ComboBox, ByVal estado As String, ByVal accion As Integer, ByRef msg As String, ByRef datos As DataGridView)
+    Public Sub inventariomulti(ByVal sitio As ComboBox, ByVal estado As String, ByVal accion As Integer, ByVal host As String, ByRef msg As String, ByRef datos As DataGridView)
 #Enable Warning IDE1006 ' Estilos de nombres
         cmd = New SqlCommand("spInventarioMulti", cnn) With {
             .CommandType = CommandType.StoredProcedure
@@ -43,6 +43,7 @@ Module informes
             .Add(New SqlParameter("@sitio", SqlDbType.VarChar)).Value = sitio.Text.Trim()
             .Add(New SqlParameter("@estado", SqlDbType.VarChar)).Value = estado.Trim()
             .Add(New SqlParameter("@accion", SqlDbType.VarChar)).Value = accion
+            .Add(New SqlParameter("@host", SqlDbType.VarChar)).Value = host.Trim()
             .Add(New SqlParameter("@msg", SqlDbType.VarChar)).Value = msg
 
         End With
