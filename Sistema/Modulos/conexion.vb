@@ -33,4 +33,29 @@ Module conexion
 
     End Sub
 
+    'MASTER
+    '***********************************************************************************************************************
+    Public Sub ConectarSQLM(Optional ByVal Server As String = "XDESTORM-NV", Optional ByVal DB As String = "master")
+
+        cnn = New SqlConnection("Server=" & Server & ";Database=" & DB & ";Integrated Security=true")
+
+        Try
+
+            cnn.Open()
+            'MsgBox("conexion realizada con exito")
+
+        Catch ex As Exception
+
+            MessageBox.Show("Error al conectar: " & vbCrLf & ex.Message)
+
+        End Try
+    End Sub
+
+    Public Sub DesconectarSQLM()
+
+        cnn.Close()
+
+    End Sub
+
+
 End Module

@@ -130,6 +130,12 @@
     <Compile Include="FrmAsignaciones.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmDatabase.Designer.vb">
+      <DependentUpon>FrmDatabase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDatabase.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmInventario.Designer.vb">
       <DependentUpon>FrmInventario.vb</DependentUpon>
     </Compile>
@@ -151,6 +157,7 @@
     <Compile Include="Modulos\Acceso.vb" />
     <Compile Include="Modulos\Asignaciones.vb" />
     <Compile Include="Modulos\conexion.vb" />
+    <Compile Include="Modulos\dbBackup.vb" />
     <Compile Include="Modulos\ExcelEXP.vb" />
     <Compile Include="Modulos\formularios.vb" />
     <Compile Include="FrmPrincipal.vb">
@@ -174,6 +181,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -189,6 +197,12 @@
   <ItemGroup>
     <EmbeddedResource Include="FrmAsignaciones.resx">
       <DependentUpon>FrmAsignaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDatabase.ko-KP.resx">
+      <DependentUpon>FrmDatabase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDatabase.resx">
+      <DependentUpon>FrmDatabase.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInventario.resx">
       <DependentUpon>FrmInventario.vb</DependentUpon>

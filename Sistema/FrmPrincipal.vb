@@ -149,4 +149,10 @@ Public Class FrmPrincipal
 
 
     End Sub
+
+    Private Sub BtnAdministracion_Click(sender As Object, e As EventArgs) Handles BtnAdministracion.Click
+        formularios.CerrarFormEnPanel(Of FrmDatabase)()
+
+        formularios.AbrirFormEnPanel(Of FrmDatabase)()
+    End Sub
 End Class
