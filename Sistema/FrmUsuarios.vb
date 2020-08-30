@@ -124,7 +124,41 @@
         End If
     End Sub
 
-    Private Sub BtnAdminUsers_Click(sender As Object, e As EventArgs) Handles BtnAdminUsers.Click
+
+    Private Sub TbNombre_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles TbNombre.KeyPress
+        'validamos que solo se ingrese texto
+        Dim soloL As New validaciones
+        soloL.SoloLetras(e)
+    End Sub
+
+    Private Sub TbAnexo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TbAnexo.KeyPress
+        'validamos que solo se ingresen numeros en el campo
+        Dim soloN As New validaciones
+        soloN.SoloNumeros(e)
+    End Sub
+
+    Private Sub TbApellido_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TbApellido.KeyPress
+        'validamos que solo se ingrese texto
+        Dim soloL As New validaciones
+        soloL.SoloLetras(e)
+    End Sub
+
+    Private Sub TxUbicacion_TextChanged(sender As Object, e As EventArgs) Handles TxUbicacion.TextChanged
+        'validamos que solo se ingresen 50 caracteres en el campo
+        Dim maxtext As Integer = 50
+        Dim valor As Integer
+        TxUbicacion.MaxLength = maxtext
+
+        Dim cCaracter As New validaciones
+        cCaracter.contCaracter(TxUbicacion.Text, maxtext, valor)
+
+        lbl_maxtext.Text = valor
+
+        If valor <= 0 Then
+
+            MessageBox.Show("No puede ingresar mas de 100 caracteres")
+
+        End If
 
     End Sub
 End Class

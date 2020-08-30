@@ -48,6 +48,7 @@ Partial Class FrmUsuarios
         Me.BtnUsuarios = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PBCerrar = New System.Windows.Forms.PictureBox()
+        Me.lbl_maxtext = New MetroSet_UI.Controls.MetroSetLabel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -155,6 +156,7 @@ Partial Class FrmUsuarios
         'CbPlanta
         '
         Me.CbPlanta.BackColor = System.Drawing.Color.LightGray
+        Me.CbPlanta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbPlanta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CbPlanta.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.CbPlanta.FormattingEnabled = True
@@ -190,6 +192,7 @@ Partial Class FrmUsuarios
         'CbEmpresa
         '
         Me.CbEmpresa.BackColor = System.Drawing.Color.LightGray
+        Me.CbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CbEmpresa.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.CbEmpresa.FormattingEnabled = True
@@ -235,6 +238,7 @@ Partial Class FrmUsuarios
         'CbTipo
         '
         Me.CbTipo.BackColor = System.Drawing.Color.LightGray
+        Me.CbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CbTipo.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.CbTipo.FormattingEnabled = True
@@ -258,6 +262,7 @@ Partial Class FrmUsuarios
         'CbEstados
         '
         Me.CbEstados.BackColor = System.Drawing.Color.LightGray
+        Me.CbEstados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbEstados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CbEstados.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.CbEstados.FormattingEnabled = True
@@ -363,12 +368,26 @@ Partial Class FrmUsuarios
         Me.PBCerrar.TabIndex = 1
         Me.PBCerrar.TabStop = False
         '
+        'lbl_maxtext
+        '
+        Me.lbl_maxtext.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.lbl_maxtext.Location = New System.Drawing.Point(712, 166)
+        Me.lbl_maxtext.Name = "lbl_maxtext"
+        Me.lbl_maxtext.Size = New System.Drawing.Size(32, 23)
+        Me.lbl_maxtext.Style = MetroSet_UI.Design.Style.Light
+        Me.lbl_maxtext.StyleManager = Nothing
+        Me.lbl_maxtext.TabIndex = 28
+        Me.lbl_maxtext.Text = "100"
+        Me.lbl_maxtext.ThemeAuthor = "Narwin"
+        Me.lbl_maxtext.ThemeName = "MetroLite"
+        '
         'FrmUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1017, 500)
+        Me.Controls.Add(Me.lbl_maxtext)
         Me.Controls.Add(Me.BtnConsultar)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.BtnAdminUsers)
@@ -432,4 +451,5 @@ Partial Class FrmUsuarios
     Friend WithEvents BtnAdminUsers As Button
     Friend WithEvents Label14 As Label
     Friend WithEvents BtnConsultar As Button
+    Friend WithEvents lbl_maxtext As MetroSet_UI.Controls.MetroSetLabel
 End Class
