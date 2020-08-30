@@ -103,15 +103,22 @@
     End Sub
 
     Private Sub btn_Restaurar_Click(sender As Object, e As EventArgs) Handles btn_Restaurar.Click
-
+        'desconectamos toda conexion a la base de datos
+        DesconectarSQL()
+        'indicamos la accion al procedimmiento almacenado
         accion = 2
+        'pasamos la direccion donde esta la base de datos a restaurar
         direccion = txb_direccionRestaurar.Text
+        'instanciamos el objeto a usar
         Dim dbrestore As New dbBackup
+        'abrimos la conexion como master para la restauracion de la base de datos
         ConectarSQLM()
+        'pasamos los parametros solicitados en el procedimiento
         dbrestore.backupandrestore(direccion, accion, mensaje)
+        'desconectamos la conexion a la base master
         DesconectarSQLM()
+        'mostramos el mensaje para saber el estado de lo realizado
         lbl_restore.Text = mensaje
-
 
     End Sub
 
