@@ -46,7 +46,7 @@ Public Class validaciones
         End If
     End Sub
 
-
+    'contador de caracter
     Public Sub contCaracter(ByVal texto As String, ByVal maxtext As Integer, ByRef valor As Integer)
 
         'pasamos el valor del campo de texto a integer y lo almacenamos en la variables 
@@ -55,7 +55,4 @@ Public Class validaciones
         valor = maxtext - count
 
     End Sub
-
-
-
 End Class
