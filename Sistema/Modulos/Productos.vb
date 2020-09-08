@@ -171,7 +171,7 @@ Module Productos
                     data_reader.Close()
                     p = 1
                 Else
-                    MessageBox.Show("Usuario sin registros", "Info")
+                    MessageBox.Show("Producto sin registros", "Info")
                     p = 2
                 End If
             End If

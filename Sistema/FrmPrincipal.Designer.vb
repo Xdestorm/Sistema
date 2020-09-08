@@ -25,29 +25,31 @@ Partial Class FrmPrincipal
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrincipal))
         Me.PMVertical = New System.Windows.Forms.Panel()
+        Me.PTop = New System.Windows.Forms.Panel()
+        Me.lbl_tipo = New System.Windows.Forms.Label()
+        Me.TxbContraseñaUsuario = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxbInicioUsuario = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.MetroSetControlBox1 = New MetroSet_UI.Controls.MetroSetControlBox()
+        Me.PContainer = New System.Windows.Forms.Panel()
+        Me.TmMenuOcultar = New System.Windows.Forms.Timer(Me.components)
+        Me.TmMenuMostrar = New System.Windows.Forms.Timer(Me.components)
+        Me.btn_help = New System.Windows.Forms.Button()
+        Me.btn_cerrar = New System.Windows.Forms.Button()
+        Me.btn_adm = New System.Windows.Forms.Button()
+        Me.BtnAcceso = New System.Windows.Forms.Button()
+        Me.PBMenu = New System.Windows.Forms.PictureBox()
         Me.BtnAdministracion = New System.Windows.Forms.Button()
         Me.BtnInventario = New System.Windows.Forms.Button()
         Me.BtnAsignaciones = New System.Windows.Forms.Button()
         Me.BtnProductos = New System.Windows.Forms.Button()
         Me.btnUsuarios = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PTop = New System.Windows.Forms.Panel()
-        Me.btn_cerrar = New System.Windows.Forms.Button()
-        Me.btn_adm = New System.Windows.Forms.Button()
-        Me.BtnAcceso = New System.Windows.Forms.Button()
-        Me.TxbContraseñaUsuario = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxbInicioUsuario = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.MetroSetControlBox1 = New MetroSet_UI.Controls.MetroSetControlBox()
-        Me.PBMenu = New System.Windows.Forms.PictureBox()
-        Me.PContainer = New System.Windows.Forms.Panel()
-        Me.TmMenuOcultar = New System.Windows.Forms.Timer(Me.components)
-        Me.TmMenuMostrar = New System.Windows.Forms.Timer(Me.components)
         Me.PMVertical.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PTop.SuspendLayout()
         CType(Me.PBMenu, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PMVertical
@@ -64,6 +66,206 @@ Partial Class FrmPrincipal
         Me.PMVertical.Name = "PMVertical"
         Me.PMVertical.Size = New System.Drawing.Size(60, 611)
         Me.PMVertical.TabIndex = 0
+        '
+        'PTop
+        '
+        Me.PTop.BackColor = System.Drawing.Color.White
+        Me.PTop.Controls.Add(Me.btn_help)
+        Me.PTop.Controls.Add(Me.lbl_tipo)
+        Me.PTop.Controls.Add(Me.btn_cerrar)
+        Me.PTop.Controls.Add(Me.btn_adm)
+        Me.PTop.Controls.Add(Me.BtnAcceso)
+        Me.PTop.Controls.Add(Me.TxbContraseñaUsuario)
+        Me.PTop.Controls.Add(Me.Label1)
+        Me.PTop.Controls.Add(Me.TxbInicioUsuario)
+        Me.PTop.Controls.Add(Me.Label9)
+        Me.PTop.Controls.Add(Me.MetroSetControlBox1)
+        Me.PTop.Controls.Add(Me.PBMenu)
+        Me.PTop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PTop.Location = New System.Drawing.Point(60, 0)
+        Me.PTop.Name = "PTop"
+        Me.PTop.Size = New System.Drawing.Size(1224, 50)
+        Me.PTop.TabIndex = 1
+        '
+        'lbl_tipo
+        '
+        Me.lbl_tipo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_tipo.AutoSize = True
+        Me.lbl_tipo.CausesValidation = False
+        Me.lbl_tipo.Location = New System.Drawing.Point(915, 20)
+        Me.lbl_tipo.Name = "lbl_tipo"
+        Me.lbl_tipo.Size = New System.Drawing.Size(28, 13)
+        Me.lbl_tipo.TabIndex = 25
+        Me.lbl_tipo.Text = "Tipo"
+        '
+        'TxbContraseñaUsuario
+        '
+        Me.TxbContraseñaUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxbContraseñaUsuario.BackColor = System.Drawing.Color.LightGray
+        Me.TxbContraseñaUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxbContraseñaUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxbContraseñaUsuario.Location = New System.Drawing.Point(768, 14)
+        Me.TxbContraseñaUsuario.Name = "TxbContraseñaUsuario"
+        Me.TxbContraseñaUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxbContraseñaUsuario.Size = New System.Drawing.Size(100, 22)
+        Me.TxbContraseñaUsuario.TabIndex = 20
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.Label1.Location = New System.Drawing.Point(666, 14)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(96, 21)
+        Me.Label1.TabIndex = 21
+        Me.Label1.Text = "Contraseña: "
+        '
+        'TxbInicioUsuario
+        '
+        Me.TxbInicioUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxbInicioUsuario.BackColor = System.Drawing.Color.LightGray
+        Me.TxbInicioUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxbInicioUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxbInicioUsuario.Location = New System.Drawing.Point(522, 14)
+        Me.TxbInicioUsuario.Name = "TxbInicioUsuario"
+        Me.TxbInicioUsuario.Size = New System.Drawing.Size(138, 22)
+        Me.TxbInicioUsuario.TabIndex = 18
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.Label9.Location = New System.Drawing.Point(445, 14)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(71, 21)
+        Me.Label9.TabIndex = 19
+        Me.Label9.Text = "Usuario: "
+        '
+        'MetroSetControlBox1
+        '
+        Me.MetroSetControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroSetControlBox1.CloseHoverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.MetroSetControlBox1.CloseHoverForeColor = System.Drawing.Color.White
+        Me.MetroSetControlBox1.CloseNormalForeColor = System.Drawing.Color.Gray
+        Me.MetroSetControlBox1.DisabledForeColor = System.Drawing.Color.DimGray
+        Me.MetroSetControlBox1.Location = New System.Drawing.Point(1112, 12)
+        Me.MetroSetControlBox1.MaximizeBox = True
+        Me.MetroSetControlBox1.MaximizeHoverBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.MetroSetControlBox1.MaximizeHoverForeColor = System.Drawing.Color.Gray
+        Me.MetroSetControlBox1.MaximizeNormalForeColor = System.Drawing.Color.Gray
+        Me.MetroSetControlBox1.MinimizeBox = True
+        Me.MetroSetControlBox1.MinimizeHoverBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.MetroSetControlBox1.MinimizeHoverForeColor = System.Drawing.Color.Gray
+        Me.MetroSetControlBox1.MinimizeNormalForeColor = System.Drawing.Color.Gray
+        Me.MetroSetControlBox1.Name = "MetroSetControlBox1"
+        Me.MetroSetControlBox1.Size = New System.Drawing.Size(100, 25)
+        Me.MetroSetControlBox1.Style = MetroSet_UI.Design.Style.Light
+        Me.MetroSetControlBox1.StyleManager = Nothing
+        Me.MetroSetControlBox1.TabIndex = 0
+        Me.MetroSetControlBox1.Text = "MetroSetControlBox1"
+        Me.MetroSetControlBox1.ThemeAuthor = "Narwin"
+        Me.MetroSetControlBox1.ThemeName = "MetroLite"
+        '
+        'PContainer
+        '
+        Me.PContainer.BackColor = System.Drawing.Color.White
+        Me.PContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PContainer.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PContainer.ForeColor = System.Drawing.Color.Transparent
+        Me.PContainer.Location = New System.Drawing.Point(60, 50)
+        Me.PContainer.Name = "PContainer"
+        Me.PContainer.Size = New System.Drawing.Size(1224, 561)
+        Me.PContainer.TabIndex = 2
+        '
+        'TmMenuOcultar
+        '
+        Me.TmMenuOcultar.Interval = 50
+        '
+        'TmMenuMostrar
+        '
+        Me.TmMenuMostrar.Interval = 50
+        '
+        'btn_help
+        '
+        Me.btn_help.BackColor = System.Drawing.Color.Transparent
+        Me.btn_help.BackgroundImage = Global.Sistema.My.Resources.Resources.question
+        Me.btn_help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_help.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_help.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_help.ForeColor = System.Drawing.Color.Transparent
+        Me.btn_help.Image = Global.Sistema.My.Resources.Resources.question
+        Me.btn_help.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_help.Location = New System.Drawing.Point(1071, 9)
+        Me.btn_help.Name = "btn_help"
+        Me.btn_help.Size = New System.Drawing.Size(35, 35)
+        Me.btn_help.TabIndex = 26
+        Me.btn_help.UseVisualStyleBackColor = False
+        '
+        'btn_cerrar
+        '
+        Me.btn_cerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_cerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btn_cerrar.BackgroundImage = Global.Sistema.My.Resources.Resources.arrow1_40529
+        Me.btn_cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_cerrar.FlatAppearance.BorderSize = 0
+        Me.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_cerrar.ForeColor = System.Drawing.Color.Transparent
+        Me.btn_cerrar.Location = New System.Drawing.Point(1030, 9)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(35, 35)
+        Me.btn_cerrar.TabIndex = 24
+        Me.btn_cerrar.UseVisualStyleBackColor = False
+        '
+        'btn_adm
+        '
+        Me.btn_adm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_adm.BackColor = System.Drawing.Color.Transparent
+        Me.btn_adm.BackgroundImage = Global.Sistema.My.Resources.Resources.psettings
+        Me.btn_adm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_adm.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_adm.Enabled = False
+        Me.btn_adm.FlatAppearance.BorderSize = 0
+        Me.btn_adm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_adm.ForeColor = System.Drawing.Color.Transparent
+        Me.btn_adm.Location = New System.Drawing.Point(989, 9)
+        Me.btn_adm.Name = "btn_adm"
+        Me.btn_adm.Size = New System.Drawing.Size(35, 35)
+        Me.btn_adm.TabIndex = 23
+        Me.btn_adm.UseVisualStyleBackColor = False
+        '
+        'BtnAcceso
+        '
+        Me.BtnAcceso.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnAcceso.BackColor = System.Drawing.Color.Transparent
+        Me.BtnAcceso.BackgroundImage = Global.Sistema.My.Resources.Resources.user
+        Me.BtnAcceso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BtnAcceso.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAcceso.FlatAppearance.BorderSize = 0
+        Me.BtnAcceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAcceso.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnAcceso.Location = New System.Drawing.Point(874, 9)
+        Me.BtnAcceso.Name = "BtnAcceso"
+        Me.BtnAcceso.Size = New System.Drawing.Size(35, 35)
+        Me.BtnAcceso.TabIndex = 22
+        Me.BtnAcceso.UseVisualStyleBackColor = False
+        '
+        'PBMenu
+        '
+        Me.PBMenu.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PBMenu.Image = CType(resources.GetObject("PBMenu.Image"), System.Drawing.Image)
+        Me.PBMenu.Location = New System.Drawing.Point(6, 3)
+        Me.PBMenu.Name = "PBMenu"
+        Me.PBMenu.Size = New System.Drawing.Size(35, 35)
+        Me.PBMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PBMenu.TabIndex = 0
+        Me.PBMenu.TabStop = False
         '
         'BtnAdministracion
         '
@@ -167,176 +369,6 @@ Partial Class FrmPrincipal
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'PTop
-        '
-        Me.PTop.BackColor = System.Drawing.Color.White
-        Me.PTop.Controls.Add(Me.btn_cerrar)
-        Me.PTop.Controls.Add(Me.btn_adm)
-        Me.PTop.Controls.Add(Me.BtnAcceso)
-        Me.PTop.Controls.Add(Me.TxbContraseñaUsuario)
-        Me.PTop.Controls.Add(Me.Label1)
-        Me.PTop.Controls.Add(Me.TxbInicioUsuario)
-        Me.PTop.Controls.Add(Me.Label9)
-        Me.PTop.Controls.Add(Me.MetroSetControlBox1)
-        Me.PTop.Controls.Add(Me.PBMenu)
-        Me.PTop.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PTop.Location = New System.Drawing.Point(60, 0)
-        Me.PTop.Name = "PTop"
-        Me.PTop.Size = New System.Drawing.Size(1224, 50)
-        Me.PTop.TabIndex = 1
-        '
-        'btn_cerrar
-        '
-        Me.btn_cerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_cerrar.BackColor = System.Drawing.Color.Transparent
-        Me.btn_cerrar.BackgroundImage = Global.Sistema.My.Resources.Resources.arrow1_40529
-        Me.btn_cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_cerrar.FlatAppearance.BorderSize = 0
-        Me.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_cerrar.ForeColor = System.Drawing.Color.Transparent
-        Me.btn_cerrar.Location = New System.Drawing.Point(1057, 7)
-        Me.btn_cerrar.Name = "btn_cerrar"
-        Me.btn_cerrar.Size = New System.Drawing.Size(35, 35)
-        Me.btn_cerrar.TabIndex = 24
-        Me.btn_cerrar.UseVisualStyleBackColor = False
-        '
-        'btn_adm
-        '
-        Me.btn_adm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_adm.BackColor = System.Drawing.Color.Transparent
-        Me.btn_adm.BackgroundImage = Global.Sistema.My.Resources.Resources.psettings
-        Me.btn_adm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_adm.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_adm.Enabled = False
-        Me.btn_adm.FlatAppearance.BorderSize = 0
-        Me.btn_adm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_adm.ForeColor = System.Drawing.Color.Transparent
-        Me.btn_adm.Location = New System.Drawing.Point(1016, 7)
-        Me.btn_adm.Name = "btn_adm"
-        Me.btn_adm.Size = New System.Drawing.Size(35, 35)
-        Me.btn_adm.TabIndex = 23
-        Me.btn_adm.UseVisualStyleBackColor = False
-        '
-        'BtnAcceso
-        '
-        Me.BtnAcceso.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnAcceso.BackColor = System.Drawing.Color.Transparent
-        Me.BtnAcceso.BackgroundImage = Global.Sistema.My.Resources.Resources.user
-        Me.BtnAcceso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BtnAcceso.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAcceso.FlatAppearance.BorderSize = 0
-        Me.BtnAcceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAcceso.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnAcceso.Location = New System.Drawing.Point(975, 7)
-        Me.BtnAcceso.Name = "BtnAcceso"
-        Me.BtnAcceso.Size = New System.Drawing.Size(35, 35)
-        Me.BtnAcceso.TabIndex = 22
-        Me.BtnAcceso.UseVisualStyleBackColor = False
-        '
-        'TxbContraseñaUsuario
-        '
-        Me.TxbContraseñaUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxbContraseñaUsuario.BackColor = System.Drawing.Color.LightGray
-        Me.TxbContraseñaUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxbContraseñaUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxbContraseñaUsuario.Location = New System.Drawing.Point(869, 12)
-        Me.TxbContraseñaUsuario.Name = "TxbContraseñaUsuario"
-        Me.TxbContraseñaUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxbContraseñaUsuario.Size = New System.Drawing.Size(100, 22)
-        Me.TxbContraseñaUsuario.TabIndex = 20
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label1.Location = New System.Drawing.Point(767, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 21)
-        Me.Label1.TabIndex = 21
-        Me.Label1.Text = "Contraseña: "
-        '
-        'TxbInicioUsuario
-        '
-        Me.TxbInicioUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxbInicioUsuario.BackColor = System.Drawing.Color.LightGray
-        Me.TxbInicioUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxbInicioUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxbInicioUsuario.Location = New System.Drawing.Point(623, 12)
-        Me.TxbInicioUsuario.Name = "TxbInicioUsuario"
-        Me.TxbInicioUsuario.Size = New System.Drawing.Size(138, 22)
-        Me.TxbInicioUsuario.TabIndex = 18
-        '
-        'Label9
-        '
-        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label9.Location = New System.Drawing.Point(546, 12)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(71, 21)
-        Me.Label9.TabIndex = 19
-        Me.Label9.Text = "Usuario: "
-        '
-        'MetroSetControlBox1
-        '
-        Me.MetroSetControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroSetControlBox1.CloseHoverBackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.MetroSetControlBox1.CloseHoverForeColor = System.Drawing.Color.White
-        Me.MetroSetControlBox1.CloseNormalForeColor = System.Drawing.Color.Gray
-        Me.MetroSetControlBox1.DisabledForeColor = System.Drawing.Color.DimGray
-        Me.MetroSetControlBox1.Location = New System.Drawing.Point(1112, 12)
-        Me.MetroSetControlBox1.MaximizeBox = True
-        Me.MetroSetControlBox1.MaximizeHoverBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
-        Me.MetroSetControlBox1.MaximizeHoverForeColor = System.Drawing.Color.Gray
-        Me.MetroSetControlBox1.MaximizeNormalForeColor = System.Drawing.Color.Gray
-        Me.MetroSetControlBox1.MinimizeBox = True
-        Me.MetroSetControlBox1.MinimizeHoverBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
-        Me.MetroSetControlBox1.MinimizeHoverForeColor = System.Drawing.Color.Gray
-        Me.MetroSetControlBox1.MinimizeNormalForeColor = System.Drawing.Color.Gray
-        Me.MetroSetControlBox1.Name = "MetroSetControlBox1"
-        Me.MetroSetControlBox1.Size = New System.Drawing.Size(100, 25)
-        Me.MetroSetControlBox1.Style = MetroSet_UI.Design.Style.Light
-        Me.MetroSetControlBox1.StyleManager = Nothing
-        Me.MetroSetControlBox1.TabIndex = 0
-        Me.MetroSetControlBox1.Text = "MetroSetControlBox1"
-        Me.MetroSetControlBox1.ThemeAuthor = "Narwin"
-        Me.MetroSetControlBox1.ThemeName = "MetroLite"
-        '
-        'PBMenu
-        '
-        Me.PBMenu.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PBMenu.Image = CType(resources.GetObject("PBMenu.Image"), System.Drawing.Image)
-        Me.PBMenu.Location = New System.Drawing.Point(6, 3)
-        Me.PBMenu.Name = "PBMenu"
-        Me.PBMenu.Size = New System.Drawing.Size(35, 35)
-        Me.PBMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PBMenu.TabIndex = 0
-        Me.PBMenu.TabStop = False
-        '
-        'PContainer
-        '
-        Me.PContainer.BackColor = System.Drawing.Color.White
-        Me.PContainer.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PContainer.ForeColor = System.Drawing.Color.Transparent
-        Me.PContainer.Location = New System.Drawing.Point(60, 50)
-        Me.PContainer.Name = "PContainer"
-        Me.PContainer.Size = New System.Drawing.Size(1224, 561)
-        Me.PContainer.TabIndex = 2
-        '
-        'TmMenuOcultar
-        '
-        Me.TmMenuOcultar.Interval = 50
-        '
-        'TmMenuMostrar
-        '
-        Me.TmMenuMostrar.Interval = 50
-        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -350,10 +382,10 @@ Partial Class FrmPrincipal
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.PMVertical.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PTop.ResumeLayout(False)
         Me.PTop.PerformLayout()
         CType(Me.PBMenu, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -378,4 +410,6 @@ Partial Class FrmPrincipal
     Friend WithEvents TmMenuMostrar As Timer
     Friend WithEvents btn_adm As Button
     Friend WithEvents btn_cerrar As Button
+    Friend WithEvents lbl_tipo As Label
+    Friend WithEvents btn_help As Button
 End Class

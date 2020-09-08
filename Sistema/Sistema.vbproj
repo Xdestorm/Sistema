@@ -240,6 +240,9 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Ayuda.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Mobile-Menu-Icon.png" />
@@ -344,6 +347,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\contactlist_theuser_802.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

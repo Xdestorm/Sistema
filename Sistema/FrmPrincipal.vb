@@ -8,6 +8,7 @@ Public Class FrmPrincipal
 
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
 
+
     End Sub
 
 
@@ -72,9 +73,17 @@ Public Class FrmPrincipal
             If tipo = 1 Then
                 BtnAdministracion.Enabled = True
                 btn_adm.Enabled = True
+                lbl_tipo.Text = "Administrador"
+
             ElseIf tipo = 2 Then
                 BtnAdministracion.Enabled = False
-            Else
+                btn_adm.Enabled = False
+                lbl_tipo.Text = "Técnico"
+
+            ElseIf tipo = 3 Then
+                BtnAdministracion.Enabled = False
+                btn_adm.Enabled = False
+                lbl_tipo.Text = "Usuario"
 
             End If
             DesconectarSQL()
@@ -154,5 +163,10 @@ Public Class FrmPrincipal
         formularios.CerrarFormEnPanel(Of FrmDatabase)()
 
         formularios.AbrirFormEnPanel(Of FrmDatabase)()
+    End Sub
+
+    Private Sub btn_help_Click(sender As Object, e As EventArgs) Handles btn_help.Click
+        Dim strHelpFilePath As String = IO.Path.Combine(Application.StartupPath, "Ayuda.chm")
+        Help.ShowHelp(ParentForm, strHelpFilePath, HelpNavigator.TableOfContents)
     End Sub
 End Class
