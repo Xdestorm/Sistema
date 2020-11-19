@@ -45,18 +45,25 @@ Public Class FrmPrincipal
 
         Dim validar_email As New validaciones 'instanciamos el objeto
 
-        If validar_email.valemail(LCase(TxbInicioUsuario.Text)) = False Then
-            MessageBox.Show("Dirección de correo electronico no valida, el correo debe tener el formato: nombre@dominio.com, " & " por favor seleccione un correo valido", "Validación de correo electronico", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            TxbInicioUsuario.Focus()
-            TxbInicioUsuario.SelectAll()
+        'If validar_email.valemail(LCase(TxbInicioUsuario.Text)) = False Then
+        '    MessageBox.Show("Dirección de correo electronico no valida, el correo debe tener el formato: nombre@dominio.com, " & " por favor seleccione un correo valido", "Validación de correo electronico", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        '    TxbInicioUsuario.Focus()
+        '    TxbInicioUsuario.SelectAll()
 
 
-        Else
+        'Else
 
-            ConectarSQL()
-            spLogin(TxbInicioUsuario, psw, acceso, tipo, accion, msg) ' procedimiento que trae los datos, si es valido activa los controles
+        'ConectarSQL()
+        'spLogin(TxbInicioUsuario, psw, acceso, tipo, accion, msg) ' procedimiento que trae los datos, si es valido activa los controles
 
-            If acceso = 1 Then
+        'Autenticación con LDAP
+
+        Dim ldpa As New LDAP
+        Dim valor As String = ldpa.IsAuthenticated("GLOBAL", TxbInicioUsuario.Text, TxbContraseñaUsuario.Text)
+
+
+
+        If acceso = 1 Then
                 btnUsuarios.Enabled = True
                 BtnProductos.Enabled = True
                 BtnAsignaciones.Enabled = True
@@ -88,7 +95,7 @@ Public Class FrmPrincipal
             End If
             DesconectarSQL()
 
-        End If
+        'End If
 
 
 
