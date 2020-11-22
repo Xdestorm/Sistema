@@ -59,41 +59,41 @@ Public Class FrmPrincipal
         'Autenticación con LDAP
 
         Dim ldpa As New LDAP
-        Dim valor As String = ldpa.IsAuthenticated("GLOBAL", TxbInicioUsuario.Text, TxbContraseñaUsuario.Text)
+        Dim valor As String = ldpa.IsAuthenticated("techsupport.com", TxbInicioUsuario.Text, TxbContraseñaUsuario.Text)
 
 
 
-        If acceso = 1 Then
-                btnUsuarios.Enabled = True
-                BtnProductos.Enabled = True
-                BtnAsignaciones.Enabled = True
-                BtnInventario.Enabled = True
-                TmMenuMostrar.Enabled = True
-            Else
+        'If acceso = 1 Then
+        '        btnUsuarios.Enabled = True
+        '        BtnProductos.Enabled = True
+        '        BtnAsignaciones.Enabled = True
+        '        BtnInventario.Enabled = True
+        '        TmMenuMostrar.Enabled = True
+        '    Else
 
-                MessageBox.Show("no tiene privilegios para acceder al sistema", "Sistema", MessageBoxButtons.OK)
-                TxbInicioUsuario.Text = ""
-                TxbContraseñaUsuario.Text = ""
-                TxbInicioUsuario.Select()
-            End If
-            'dato que indica si es tecnico o administrador y activa las condiciones de administrador
-            If tipo = 1 Then
-                BtnAdministracion.Enabled = True
-                btn_adm.Enabled = True
-                lbl_tipo.Text = "Administrador"
+        '        MessageBox.Show("no tiene privilegios para acceder al sistema", "Sistema", MessageBoxButtons.OK)
+        '        TxbInicioUsuario.Text = ""
+        '        TxbContraseñaUsuario.Text = ""
+        '        TxbInicioUsuario.Select()
+        '    End If
+        '    'dato que indica si es tecnico o administrador y activa las condiciones de administrador
+        '    If tipo = 1 Then
+        '        BtnAdministracion.Enabled = True
+        '        btn_adm.Enabled = True
+        '        lbl_tipo.Text = "Administrador"
 
-            ElseIf tipo = 2 Then
-                BtnAdministracion.Enabled = False
-                btn_adm.Enabled = False
-                lbl_tipo.Text = "Técnico"
+        '    ElseIf tipo = 2 Then
+        '        BtnAdministracion.Enabled = False
+        '        btn_adm.Enabled = False
+        '        lbl_tipo.Text = "Técnico"
 
-            ElseIf tipo = 3 Then
-                BtnAdministracion.Enabled = False
-                btn_adm.Enabled = False
-                lbl_tipo.Text = "Usuario"
+        '    ElseIf tipo = 3 Then
+        '        BtnAdministracion.Enabled = False
+        '        btn_adm.Enabled = False
+        '        lbl_tipo.Text = "Usuario"
 
-            End If
-            DesconectarSQL()
+        '    End If
+        'DesconectarSQL()
 
         'End If
 
